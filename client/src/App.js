@@ -19,7 +19,7 @@ const StockPrice = ({ ticker }) => {
   }
   const fetchStockData = async (ticker) => {
     // Replace this with your actual function to fetch the stock data.
-    const response = await fetch(`https://financialmodelingprep.com/api/v3/quote/${ticker}?apikey=8a8bf49275dc3662db93d3ec1e429b60`);
+    const response = await fetch(`https://financialmodelingprep.com/api/v3/quote/${ticker}?apikey=${process.env.REACT_APP_FMP_API_KEY}`);
     const data = await response.json();
     if (typeof data[0] === "undefined") {
       return undefined;
